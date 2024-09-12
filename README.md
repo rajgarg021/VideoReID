@@ -1,5 +1,5 @@
 # VideoReID
-Detect, track and re-identify people across frames in a video
+Detect, track and re-identify people across frames in a video.
 
 This project implements a video-based person re-identification (Re-ID) system using computer vision and deep learning techniques. Here's a detailed explanation of what the project does:
 
@@ -65,11 +65,11 @@ This system allows for tracking and re-identifying persons across video frames, 
 
 The predicted output video, tracking people and reassigning them their original ids even after occlusion using the above script can be found [here.](https://drive.google.com/drive/folders/17XVGBcbJRX85lA1cjXB1B32V5q_uGtAD?usp=sharing)
 
-For videos where there was little to no occlusion, using bytetrack worked just fine out of the box.
+For videos where there was little to no occlusion, using bytetrack (code in the block below) worked just fine out of the box.
  ```python
 from ultralytics import YOLO
 
 model = YOLO('yolov10x.pt')
-results = model.track(source="video_8.mp4", save=True, classes=[0], conf=0.1, tracker="bytetrack.yaml")
+results = model.track(source="input_video.mp4", save=True, classes=[0], conf=0.1, tracker="bytetrack.yaml")
  ```
 Output videos tracked using this can be found [here.](https://drive.google.com/drive/folders/1gWxWiGYwfJlBXrUHCym6J1Zk6gO6rauU?usp=sharing)
