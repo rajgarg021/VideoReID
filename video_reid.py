@@ -7,14 +7,14 @@ from PIL import Image
 from ultralytics import YOLO
 from collections import deque
 
-# Define constants for the tracking algorithm
+# Define hyperparameters for the tracking algorithm
 MAX_FRAMES_UNSEEN = 50         # Maximum number of frames a person can be unseen before being removed
 PERSON_CLASS_ID = 0            # Class ID for person in YOLO model
 APPEARANCE_WEIGHT = 0.75       # Weight given to appearance similarity in matching
 SPATIAL_WEIGHT = 0.25          # Weight given to spatial similarity in matching
 COMBINED_THRESHOLD = 0.65      # Threshold for considering a match between detections
-HISTORY_SIZE = 10              # Number of historical embeddings and boxes to keep for each person
-USE_AVERAGE_EMBEDDING = False  # Whether to use average of historical clip embeddings or just the latest
+HISTORY_SIZE = 30              # Number of historical embeddings and boxes to keep for each person
+USE_AVERAGE_EMBEDDING = True  # Whether to use average of historical clip embeddings or just the latest
 
 # Set up the device (GPU if available, otherwise CPU)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
