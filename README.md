@@ -7,7 +7,7 @@ This project implements a video-based person re-identification (Re-ID) system us
 
 1. Setup and Initialization:
    - The script imports necessary libraries, including PyTorch, CLIP, OpenCV, and YOLO.
-   - It sets up constants for tracking algorithm parameters.
+   - It sets up hyperparamters for the tracking algorithm.
    - The device (GPU or CPU) is configured for processing.
    - CLIP model is loaded for generating image embeddings.
    - YOLO model is loaded for person detection.
@@ -63,7 +63,7 @@ This system allows for tracking and re-identifying persons across video frames, 
 
 ## Output videos
 
-The predicted output video, tracking people and reassigning them their original ids even after occlusion using the above script can be found [here.](https://drive.google.com/drive/folders/17XVGBcbJRX85lA1cjXB1B32V5q_uGtAD?usp=sharing)
+The processed output videos, tracking people and reassigning them their original ids even after occlusion (hiding behind a table, moving out of the frame partially or completely, another person or a hand coming in front and eclipsing the person behind from view, etc.) generated using the above script can be found [here.](https://drive.google.com/drive/folders/17XVGBcbJRX85lA1cjXB1B32V5q_uGtAD?usp=sharing)
 
 For videos where there was little to no occlusion, using bytetrack (code in the block below) worked just fine out of the box.
  ```python
